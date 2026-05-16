@@ -12,4 +12,8 @@ public class Stats {
     int getStrength() {
         return strength;
     }
+
+    public float getStrengthModifier() {
+        return getStrength() * .1f;
+    }
 }
