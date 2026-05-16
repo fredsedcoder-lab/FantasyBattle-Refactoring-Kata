@@ -1,7 +1,7 @@
 package codingdojo;
 
 
-class Player extends Target {
+public class Player extends Target {
     private Inventory inventory;
     private Stats stats;
 

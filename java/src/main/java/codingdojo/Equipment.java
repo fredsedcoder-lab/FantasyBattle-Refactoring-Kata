@@ -1,7 +1,7 @@
 package codingdojo;
 
 
-class Equipment {
+public class Equipment {
     // TODO add a ring item that may be equipped
     //  that may also add damage modifier
     private Item leftHand;
