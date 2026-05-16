@@ -1,13 +1,17 @@
 package codingdojo;
 
 public class Inventory {
-    private Equipment equipment;
+    private final Equipment equipment;
 
-    public Inventory(Equipment equipment) {
+    Inventory(Equipment equipment) {
         this.equipment = equipment;
     }
 
     Equipment getEquipment() {
         return equipment;
+    }
+
+    public int getTotalDamage(float strengthModifier) {
+        return getEquipment().calculateTotalDamage(strengthModifier);
     }
 }

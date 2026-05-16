@@ -33,4 +33,27 @@ class Equipment {
     Item getChest() {
         return chest;
     }
+
+    public int calculateTotalDamage(float strengthModifier) {
+        int baseDamage = calculateBaseDamage();
+        float damageModifier = calculateDamageModifier(strengthModifier);
+        return Math.round(baseDamage * damageModifier);
+    }
+
+    int calculateBaseDamage() {
+        return leftHand.getBaseDamage() +
+                rightHand.getBaseDamage() +
+                head.getBaseDamage() +
+                feet.getBaseDamage() +
+                chest.getBaseDamage();
+    }
+
+    float calculateDamageModifier(float strengthModifier) {
+        return strengthModifier +
+                leftHand.getDamageModifier() +
+                rightHand.getDamageModifier() +
+                head.getDamageModifier() +
+                feet.getDamageModifier() +
+                chest.getDamageModifier();
+    }
 }
