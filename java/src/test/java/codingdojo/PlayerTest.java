@@ -1,33 +1,57 @@
 package codingdojo;
 
-import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
 
 public class PlayerTest {
 
-    // choose this one if you are familiar with mocks
-    @Disabled("Test is not finished yet")
-    @Test
-    void damageCalculationsWithMocks() {
-        Inventory inventory = mock(Inventory.class);
-        Stats stats = mock(Stats.class);
-        SimpleEnemy target = mock(SimpleEnemy.class);
+    Inventory inventory;
+    Stats stats;
 
-        Damage damage = new Player(inventory, stats).calculateDamage(target);
-        assertEquals(10, damage.getAmount());
+    @BeforeEach
+    void  setup(){
+        inventory = new Inventory(
+                new Equipment(
+                        new BasicItem("leftHand", 1, 2),
+                        new BasicItem("rightHand", 3, 4),
+                        new BasicItem("head", 5, 6),
+                        new BasicItem("feet", 7, 8),
+                        new BasicItem("chest", 9, 10)
+                )
+        );
+        stats = new Stats(10);
     }
 
-    // choose this one if you are not familiar with mocks
-    @Disabled("Test is not finished yet")
+
     @Test
     void damageCalculations() {
-        Inventory inventory = new Inventory(null);
-        Stats stats = new Stats(0);
-        SimpleEnemy target = new SimpleEnemy(null, null);
+        SimpleEnemy target = new SimpleEnemy(new SimpleArmor(10) , List.of());
+
         Damage damage = new Player(inventory, stats).calculateDamage(target);
-        assertEquals(10, damage.getAmount());
+
+        assertEquals(765, damage.getAmount());
     }
+    @Test
+    void damageCalculationsWithPlayer() {
+        Player target = new Player(inventory, stats);
+
+        Damage damage = new Player(inventory, stats).calculateDamage(target);
+
+        assertEquals(0, damage.getAmount());
+    }
+
+    static class UnkownTarget extends Target{};
+    @Test
+    void damageCalculationWithUnknownTarget(){
+        UnkownTarget target = new UnkownTarget();
+
+        Damage damage = new Player(inventory, stats).calculateDamage(target);
+
+        assertEquals(775, damage.getAmount());
+    }
+
 }
