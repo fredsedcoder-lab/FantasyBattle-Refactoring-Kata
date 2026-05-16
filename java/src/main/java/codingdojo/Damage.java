@@ -1,6 +1,6 @@
 package codingdojo;
 
-class Damage {
+public class Damage {
     private int amount;
 
     Damage(int amount) {

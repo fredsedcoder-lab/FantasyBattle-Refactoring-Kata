@@ -1,6 +1,6 @@
 package codingdojo;
 
-abstract class Target {
+public abstract class Target {
 
     public int getSoak(int totalDamage) {
         int soak = 0;

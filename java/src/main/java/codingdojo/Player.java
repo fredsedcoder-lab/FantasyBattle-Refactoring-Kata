@@ -10,7 +10,7 @@ public class Player extends Target {
         this.stats = stats;
     }
 
-    Damage calculateDamage(Target other) {
+    public Damage calculateDamage(Target other) {
         int baseDamage = inventory.getBaseDamage();
         float damageModifier = getDamageModifier();
         int totalDamage = Math.round(baseDamage * damageModifier);
