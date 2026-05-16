@@ -44,7 +44,8 @@ public class PlayerTest {
         assertEquals(0, damage.getAmount());
     }
 
-    static class UnkownTarget extends Target{}
+    static class UnkownTarget extends Target{
+    }
     @Test
     void damageCalculationWithUnknownTarget(){
         UnkownTarget target = new UnkownTarget();
