@@ -2,8 +2,8 @@ package codingdojo;
 
 
 public class Player extends Target {
-    private Inventory inventory;
-    private Stats stats;
+    private final Inventory inventory;
+    private final Stats stats;
 
     Player(Inventory inventory, Stats stats) {
         this.inventory = inventory;
