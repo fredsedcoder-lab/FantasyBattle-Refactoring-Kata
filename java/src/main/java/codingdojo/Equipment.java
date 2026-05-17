@@ -3,8 +3,6 @@ package codingdojo;
 import java.util.List;
 
 public class Equipment {
-  // TODO add a ring item that may be equipped
-  //  that may also add damage modifier
   private final Item leftHand;
   private final Item rightHand;
   private final Item head;
