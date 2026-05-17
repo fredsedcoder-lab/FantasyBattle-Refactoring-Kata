@@ -9,7 +9,7 @@ public class Stats {
         this.dexterity = dexterity;
     }
 
-    public float getStrengthModifier() {
+    public float getDamageModifier() {
         return strength * .1f + dexterity * .05f;
     }
 }
