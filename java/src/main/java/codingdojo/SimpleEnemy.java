@@ -4,33 +4,26 @@ import java.util.List;
 
 public class SimpleEnemy extends Target {
 
-    private final Armor armor;
-    private final List<Buff> buffs;
+  private final Armor armor;
+  private final List<Buff> buffs;
 
-    public SimpleEnemy(Armor armor, List<Buff> buffs) {
-        this.armor = armor;
-        this.buffs = buffs;
-    }
+  public SimpleEnemy(Armor armor, List<Buff> buffs) {
+    this.armor = armor;
+    this.buffs = buffs;
+  }
 
-    List<Buff> getBuffs() {
-        return buffs;
-    }
+  List<Buff> getBuffs() {
+    return buffs;
+  }
 
-    Armor getArmor() {
-        return this.armor;
-    }
+  Armor getArmor() {
+    return this.armor;
+  }
 
-
-    @Override
-    public int getSoak(int totalDamage) {
-        return   Math.round(
-            getArmor().getDamageSoak() *
-                (
-                    ((float) getBuffs()
-                        .stream()
-                        .mapToDouble(Buff::soakModifier)
-                        .sum()) +
-                        1f
-                ));
-    }
+  @Override
+  public int getSoak(int totalDamage) {
+    return Math.round(
+        getArmor().getDamageSoak()
+            * (((float) getBuffs().stream().mapToDouble(Buff::soakModifier).sum()) + 1f));
+  }
 }

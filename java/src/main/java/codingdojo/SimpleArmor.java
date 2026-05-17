@@ -2,14 +2,14 @@ package codingdojo;
 
 public class SimpleArmor implements Armor {
 
-    private int soak;
+  private int soak;
 
-    public SimpleArmor(int soak) {
-        this.soak = soak;
-    }
+  public SimpleArmor(int soak) {
+    this.soak = soak;
+  }
 
-    @Override
-    public int getDamageSoak() {
-        return soak;
-    }
+  @Override
+  public int getDamageSoak() {
+    return soak;
+  }
 }

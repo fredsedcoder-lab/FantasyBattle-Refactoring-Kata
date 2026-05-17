@@ -1,7 +1,7 @@
 package codingdojo;
 
 public interface Item {
-    int getBaseDamage();
+  int getBaseDamage();
 
-    float getDamageModifier();
+  float getDamageModifier();
 }
