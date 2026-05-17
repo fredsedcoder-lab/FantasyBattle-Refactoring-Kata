@@ -1,6 +1,8 @@
 package codingdojo;
 
 
+import java.util.List;
+
 public class Equipment {
     // TODO add a ring item that may be equipped
     //  that may also add damage modifier
@@ -10,7 +12,8 @@ public class Equipment {
     private final Item feet;
     private final Item chest;
 
-    Equipment(Item leftHand, Item rightHand, Item head, Item feet, Item chest) {
+
+    public Equipment(Item leftHand, Item rightHand, Item head, Item feet, Item chest) {
         this.leftHand = leftHand;
         this.rightHand = rightHand;
         this.head = head;
@@ -18,19 +21,14 @@ public class Equipment {
         this.chest = chest;
     }
 
-    public int getBaseDamage() {
-        return leftHand.getBaseDamage() +
-                rightHand.getBaseDamage() +
-                head.getBaseDamage() +
-                feet.getBaseDamage() +
-                chest.getBaseDamage();
+    List<Item> allItems(){
+        return List.of(leftHand, rightHand, head, feet, chest);
     }
 
+    public int getBaseDamage() {
+        return allItems().stream().mapToInt(Item::getBaseDamage).sum();
+    }
     public float getDamageModifier() {
-        return leftHand.getDamageModifier() +
-                rightHand.getDamageModifier() +
-                head.getDamageModifier() +
-                feet.getDamageModifier() +
-                chest.getDamageModifier();
+        return (float) allItems().stream().mapToDouble(Item::getDamageModifier).sum();
     }
 }
