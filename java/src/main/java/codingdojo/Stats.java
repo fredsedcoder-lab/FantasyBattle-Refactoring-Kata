@@ -1,19 +1,15 @@
 package codingdojo;
 
 public class Stats {
-    // TODO add dexterity that will both help with soak and damage.
-    //  but half of what strength gives.
-    private int strength;
+    private final int strength;
+    private final int dexterity;
 
-    public Stats(int strength) {
+    public Stats(int strength,  int dexterity) {
         this.strength = strength;
-    }
-
-    int getStrength() {
-        return strength;
+        this.dexterity = dexterity;
     }
 
     public float getStrengthModifier() {
-        return getStrength() * .1f;
+        return strength * .1f + dexterity * .05f;
     }
 }

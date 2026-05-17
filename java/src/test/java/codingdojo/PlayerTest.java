@@ -23,7 +23,7 @@ public class PlayerTest {
                         new BasicItem("chest", 9, 10)
                 )
         );
-        stats = new Stats(10);
+        stats = new Stats(10, 10);
     }
 
 
@@ -33,7 +33,7 @@ public class PlayerTest {
 
         Damage damage = new Player(inventory, stats).calculateDamage(target);
 
-        assertEquals(765, damage.getAmount());
+        assertEquals(778, damage.getAmount());
     }
     @Test
     void damageCalculationsWithPlayer() {
@@ -52,7 +52,7 @@ public class PlayerTest {
 
         Damage damage = new Player(inventory, stats).calculateDamage(target);
 
-        assertEquals(775, damage.getAmount());
+        assertEquals(788, damage.getAmount());
     }
 
 }
