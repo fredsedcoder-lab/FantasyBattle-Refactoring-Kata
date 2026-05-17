@@ -22,4 +22,8 @@ public class Player extends Target {
         return stats.getStrengthModifier() + inventory.getDamageModifier();
     }
 
+    @Override
+    public int getSoak(int totalDamage) {
+        return totalDamage/2;
+    }
 }

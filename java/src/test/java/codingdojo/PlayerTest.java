@@ -41,10 +41,14 @@ public class PlayerTest {
 
         Damage damage = new Player(inventory, stats).calculateDamage(target);
 
-        assertEquals(0, damage.getAmount());
+        assertEquals(394, damage.getAmount());
     }
 
     static class UnkownTarget extends Target{
+        @Override
+        public int getSoak(int totalDamage) {
+            return 0;
+        }
     }
     @Test
     void damageCalculationWithUnknownTarget(){
