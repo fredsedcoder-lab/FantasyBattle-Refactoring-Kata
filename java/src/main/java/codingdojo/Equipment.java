@@ -11,18 +11,20 @@ public class Equipment {
     private final Item head;
     private final Item feet;
     private final Item chest;
+    private final Item ring;
 
 
-    public Equipment(Item leftHand, Item rightHand, Item head, Item feet, Item chest) {
+    public Equipment(Item leftHand, Item rightHand, Item head, Item feet, Item chest, Item ring) {
         this.leftHand = leftHand;
         this.rightHand = rightHand;
         this.head = head;
         this.feet = feet;
         this.chest = chest;
+        this.ring = ring;
     }
 
     List<Item> allItems(){
-        return List.of(leftHand, rightHand, head, feet, chest);
+        return List.of(leftHand, rightHand, head, feet, chest, ring);
     }
 
     public int getBaseDamage() {

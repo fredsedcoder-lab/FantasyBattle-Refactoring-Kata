@@ -20,7 +20,8 @@ public class PlayerTest {
                         new BasicItem("rightHand", 3, 4),
                         new BasicItem("head", 5, 6),
                         new BasicItem("feet", 7, 8),
-                        new BasicItem("chest", 9, 10)
+                        new BasicItem("chest", 9, 10),
+                        new BasicItem("ring", 10, 11)
                 )
         );
         stats = new Stats(10, 10);
@@ -33,7 +34,7 @@ public class PlayerTest {
 
         Damage damage = new Player(inventory, stats).calculateDamage(target);
 
-        assertEquals(778, damage.getAmount());
+        assertEquals(1478, damage.getAmount());
     }
     @Test
     void damageCalculationsWithPlayer() {
@@ -41,7 +42,7 @@ public class PlayerTest {
 
         Damage damage = new Player(inventory, stats).calculateDamage(target);
 
-        assertEquals(394, damage.getAmount());
+        assertEquals(744, damage.getAmount());
     }
 
     static class UnkownTarget extends Target{
@@ -56,7 +57,7 @@ public class PlayerTest {
 
         Damage damage = new Player(inventory, stats).calculateDamage(target);
 
-        assertEquals(788, damage.getAmount());
+        assertEquals(1488, damage.getAmount());
     }
 
 }
