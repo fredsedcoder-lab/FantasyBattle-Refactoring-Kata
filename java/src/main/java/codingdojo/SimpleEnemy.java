@@ -21,7 +21,7 @@ public class SimpleEnemy extends Target {
   }
 
   @Override
-  public int getSoak(int totalDamage) {
+  public int getAmountSoaked(int totalDamage) {
     return Math.round(
         getArmor().getDamageSoak()
             * (((float) getBuffs().stream().mapToDouble(Buff::soakModifier).sum()) + 1f));

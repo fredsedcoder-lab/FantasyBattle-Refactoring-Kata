@@ -45,7 +45,7 @@ public class PlayerTest {
 
   static class UnkownTarget extends Target {
     @Override
-    public int getSoak(int totalDamage) {
+    public int getAmountSoaked(int totalDamage) {
       return 0;
     }
   }
